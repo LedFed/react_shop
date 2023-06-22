@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6abe48b.css",
+    "main.js": "/static/js/main.59b38397.js",
+    "static/media/pizza.png": "/static/media/pizza.4ab9db011f04a843836b.png",
+    "static/media/sr-hearth.svg": "/static/media/sr-hearth.5cd017765e04f486bee8.svg",
+    "static/media/shopping-cart.svg": "/static/media/shopping-cart.d33530c789d00735d76b.svg",
+    "static/media/btnCart.svg": "/static/media/btnCart.37939258ff193020a11b.svg",
+    "static/media/search.svg": "/static/media/search.00e9c380a17fe8e8089a.svg",
+    "index.html": "/index.html",
+    "main.e6abe48b.css.map": "/static/css/main.e6abe48b.css.map",
+    "main.59b38397.js.map": "/static/js/main.59b38397.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6abe48b.css",
+    "static/js/main.59b38397.js"
+  ]
+}

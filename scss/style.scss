@@ -1,10 +1,48 @@
 @import '../scss/reset';
 @import '../scss/burger';
 
+@mixin Main_title {
+    color: #3D3D3D;
+    font-size: 14px;
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.224px;
+}
+
+@mixin Shadow_cart {
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.25);
+}
+
+@mixin Main_text {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.168px;
+}
 
 body {
-    // overflow-y: hidden;
+    font-family: Overpass;
+    font-style: normal;
+    line-height: normal;
 }
+
+.altern {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.container {
+    padding: 0 10px;
+}
+
+// overflow-y: hidden;
+// transition: .6s cubic-bezier(0.5, 1, 0.89, 1);
+
+// border-radius: 3px;
+// background: var(--linrstd, linear-gradient(180deg, #FF9211 0%, rgba(255, 153, 7, 0.54) 77.08%, rgba(255, 155, 4, 0.40) 100%));
 
 header {
     position: fixed;
@@ -14,12 +52,13 @@ header {
     grid-template-columns: 75px 75px 1fr 150px;
     box-sizing: content-box;
     border-bottom: 1px solid rgba(245, 245, 243, 1);
-    transition: all .5s linear;
+    transition: .5s cubic-bezier(0.5, 1, 0.89, 1);
     background-color: rgba(255, 255, 255, 0.75);
     z-index: 10;
     backdrop-filter: blur(20px);
     top: 0;
     box-sizing: border-box;
+
     &.active {
         grid-template-columns: 0 100% 0 0;
 
@@ -55,18 +94,17 @@ header {
 }
 
 .navigation {
-    // display: none;
     display: flex;
     position: absolute;
     top: 75px;
     width: 100%;
-   
+
     align-items: center;
     justify-content: center;
     background: #fff;
     height: calc(100vh - 75px);
     transform: translateX(-101%);
-    transition: .4s linear;
+    transition: .5s cubic-bezier(0.5, 1, 0.89, 1);
 
     &.active {
         transform: translateX(0%);
@@ -99,11 +137,8 @@ header {
 
 .header_login {}
 
-.wrap {}
-
 .search {
-    // display: none;
-    background:transparent;
+    background: transparent;
     width: 0;
 }
 
@@ -116,7 +151,6 @@ header {
 .header_search {
     height: 100%;
     width: 75px;
-    // padding-right: calc(100vw + 75px);
     background: url(../public/img/search.svg) center no-repeat;
 }
 
@@ -124,13 +158,11 @@ header {
 
 .header_functional {
     display: flex;
-
     .header_icon {
         height: 100%;
         width: 75px;
 
         background: url(../public/img/shopping-cart.svg) center no-repeat;
-
     }
 
     .favorite {
@@ -160,9 +192,7 @@ header {
     }
 }
 
-.notify {}
-
-///////
+// Фильтр
 .filter {
     display: flex;
     column-gap: 12px;
@@ -171,28 +201,21 @@ header {
 }
 
 .filter_item {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 11px;
-    line-height: 16px;
     color: #000000;
-    background: rgb(255, 255, 255);
-    border: 1px solid #F5F5F3;
     border-radius: 15px;
     padding: 7px 18px;
+    transition: .3s linear;
+    @include Main_text;
 
     &.active {
-        background: orange;
+        background: var(--linrstd, linear-gradient(180deg, #FF9211 0%, rgba(255, 153, 7, 0.54) 77.08%, rgba(255, 155, 4, 0.40) 100%));
         border-radius: 15px;
         color: #fff;
     }
 }
 
-///////////
-.container {
-    padding: 0 10px;
-}
+////// Фильтр /////
+
 
 .card_items {
     display: grid;
@@ -208,10 +231,8 @@ header {
 }
 
 .card_item {
-    padding: 14px 7px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25), 0px 0px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    padding: 7px 5px;
+    @include Shadow_cart;
 }
 
 .card_img {
@@ -221,28 +242,20 @@ header {
 }
 
 .card_title {
+    @include Main_title;
     margin: 0;
-    margin-bottom: 4px;
     margin-top: 32px;
-    font-family: 'sans-serif';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #3D3D3D;
+    margin-bottom: 4px;
 }
 
-.card_price {
-    font-family: 'sans-serif';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
+.price {
     color: #7D7D7D;
-
+    font-size: 12px;
+    font-weight: 300;
     display: inline-block;
-    margin-bottom: 14px;
-    &::after{
+    margin-bottom: 10px;
+
+    &::after {
         content: ' ₽';
     }
 }
@@ -259,76 +272,76 @@ header {
     border: 1px solid orange;
     transition: .3s linear;
 
+    @include Main_text;
+
     &.active {
-        background: orange;
+        background: var(--linrstd, linear-gradient(180deg, #FF9211 0%, rgba(255, 153, 7, 0.54) 77.08%, rgba(255, 155, 4, 0.40) 100%));
+        border: 1px solid transition;
+        padding-left: 32px;
         color: #fff;
         position: relative;
-        padding-left: 25px;
 
         &::after {
             content: url('../public/img/btnCart.svg');
-
             position: absolute;
-            left: 35px;
-            top: 5px;
-            // width: 17px;
-            // height: 19px;
-
+            left: 27px;
+            top: 3px;
         }
     }
 }
 
-.list_items{
-    display: flex;
-    transform: translateX(100%);
-    top: 75px;
-    transition: .3s;
-    height: calc(100vh - 75px);
-    width: 100%;
-    background: #fff;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 16px;
-    &.active{
-        transform: translateX(0);
-    }
-}
 
 // Корзина 
 
 .bsket_items {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     row-gap: 16px;
-}
-
-.basket_title{
-    margin: 30px 0;
-}
-
-.pizza {
-    padding: 15px 10px;
+    margin-top: 100px;
 }
 
 .basket_item {
     display: flex;
     justify-content: space-between;
-    border-radius: 7px;
-    background: #FFF;
-    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    @include Shadow_cart;
+    .pizza {
+        padding: 15px 10px;
+    }
+}
+
+.basket_title {
+    @include Main_title;
+    margin-bottom: 6px;
 }
 
 .basket_left {
-    padding-right: 28px;
+    padding-right: 16px;
+}
+
+.all_price {
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 36px;
+}
+
+.payment {
+    color: #FFF;
+    border-radius: 4px;
+    background: var(--linrstd, linear-gradient(180deg, #FF9211 0%, rgba(255, 153, 7, 0.54) 77.08%, rgba(255, 155, 4, 0.40) 100%));
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 57px;
 }
 
 .counters_block {
     display: flex;
     align-items: center;
-    margin-top: 28px;
-
+    margin-top: 10px;
 }
 
 .btQ {
@@ -336,35 +349,67 @@ header {
     border-radius: 10px;
     width: 27px;
     height: 27px;
-    background:#f2f2f2;
+    background: #f2f2f2;
 }
 
 .quantity {
     padding: 0 10px;
 }
 
-
-
 .delete {
     margin-left: 42px;
 }
 
-.all_price {
-    text-align: center;
-    color: #000;
-    font-size: 16px;
-    font-family: Inter;
-    font-weight: 500;
-    margin-top: 30px;
-    margin-bottom: 36px;
+//////// Корзина //////// 
+
+
+.list_items {
+    display: flex;
+    transform: translateX(100%);
+    top: 75px;
+    transition: .3s cubic-bezier(0.5, 1, 0.89, 1);
+    height: calc(100vh - 75px);
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    flex-direction: column;
+    // align-items: center;
+    padding: 0 10px;
+    row-gap: 16px;
+
+    &.active {
+        transform: translateX(0);
+    }
 }
 
-.payment {
-    color:#FFF;
-    border-radius: 4px;
-    background: var(--linrstd, linear-gradient(180deg, #FF9211 0%, rgba(255, 153, 7, 0.54) 77.08%, rgba(255, 155, 4, 0.40) 100%));
-    width: 100%;
-    outline: none;
-    border: none;
-    height: 57px;
+.list_item {
+    // display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.25);
+
+    .pizza {
+        padding: 6px;
+        width: 100px;
+        height: auto;
+
+    }
+
+    .add_basket{
+        height: 40px;
+        margin-right: 16px;
+    }
+
+    .card_title{
+        margin-top: 12px;
+    }
+}
+
+.list_block {
+    // margin-left: 32px;
 }

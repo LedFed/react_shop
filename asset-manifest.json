@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.a71fa77a.css",
-    "main.js": "/static/js/main.f053d4b9.js",
-    "static/media/sr-hearth.svg": "/static/media/sr-hearth.5cd017765e04f486bee8.svg",
-    "static/media/shopping-cart.svg": "/static/media/shopping-cart.d33530c789d00735d76b.svg",
-    "static/media/btnCart.svg": "/static/media/btnCart.37939258ff193020a11b.svg",
+    "main.css": "https://ledfed.github.io/react_shop/static/css/main.a71fa77a.css",
+    "main.js": "https://ledfed.github.io/react_shop/static/js/main.f053d4b9.js",
+    "static/media/sr-hearth.svg": "https://ledfed.github.io/react_shop/static/media/sr-hearth.5cd017765e04f486bee8.svg",
+    "static/media/shopping-cart.svg": "https://ledfed.github.io/react_shop/static/media/shopping-cart.d33530c789d00735d76b.svg",
+    "static/media/btnCart.svg": "https://ledfed.github.io/react_shop/static/media/btnCart.37939258ff193020a11b.svg",
     "index.html": "/index.html",
-    "static/media/search.svg": "/static/media/search.00e9c380a17fe8e8089a.svg",
+    "static/media/search.svg": "https://ledfed.github.io/react_shop/static/media/search.00e9c380a17fe8e8089a.svg",
     "main.a71fa77a.css.map": "/static/css/main.a71fa77a.css.map",
-    "main.f053d4b9.js.map": "/static/js/main.f053d4b9.js.map"
+    "main.f053d4b9.js.map": "https://ledfed.github.io/react_shop/static/js/main.f053d4b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.a71fa77a.css",
-    "static/js/main.f053d4b9.js"
+    "https://ledfed.github.io/react_shop/static/css/main.a71fa77a.css",
+    "https://ledfed.github.io/react_shop/static/js/main.f053d4b9.js"
   ]
 }
